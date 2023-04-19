@@ -15,3 +15,5 @@ def post_details(request, post_id):
     except (Post.DoesNotExist, ValidationError):
         raise Http404("Post not found")
     return render(request, 'post.html', {'post': post})
+
+
