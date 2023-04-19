@@ -1,0 +1,49 @@
+<!-- home.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            display: block;
+            padding: 10px;
+            background-color: #f0f0f0;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #ddd;
+        }
+        .no-posts {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Job List</h1>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{% url 'post_details' post_id=post.id %}">{{ post.title|upper }}</a>
+            </li>
+        {% empty %}
+            <li class="no-posts">No posts available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

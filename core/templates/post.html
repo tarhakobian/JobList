@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post Detail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .post-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="post-container">
+        <h1>{{ post.title }}</h1>
+        <p><strong>Publisher:</strong> {{ post.publisher.username }}</p>
+        <p><strong>Category:</strong> {{ post.category }}</p>
+        <p><strong>Description:</strong> {{ post.description }}</p>
+        <p><strong>Requirements:</strong> {{ post.requirements }}</p>
+        <p><strong>Salary:</strong> {{ post.salary }}</p>
+        <p><strong>Contact Name:</strong> {{ post.contact_name }}</p>
+        <p><strong>Phone Number:</strong> {{ post.phone_number }}</p>
+        <p><strong>Email:</strong> {{ post.email }}</p>
+    </div>
+</body>
+</html>
