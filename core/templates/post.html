@@ -48,8 +48,8 @@
         <p><strong>Requirements:</strong> {{ post.requirements }}</p>
         <p><strong>Salary:</strong> {{ post.salary }}</p>
         <p><strong>Contact Name:</strong> {{ post.contact_name }}</p>
-        <p><strong>Phone Number:</strong> {{ post.phone_number }}</p>
-        <p><strong>Email:</strong> {{ post.email }}</p>
+        <p><strong>Phone Number:</strong> <a href="tel:{{ post.phone_number }}">{{ post.phone_number }}</a></p>
+        <p><strong>Email:</strong> <a href="mailto:{{ post.email }}">{{ post.email }}</a></p>
     </div>
 </body>
 </html>
