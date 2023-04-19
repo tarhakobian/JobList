@@ -5,6 +5,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: cornsilk;
         }
         .post-container {
             max-width: 800px;
@@ -19,14 +20,28 @@
         }
         p {
             margin-bottom: 10px;
+            position: relative;
+        }
+        p::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
         }
         strong {
             font-weight: bold;
+        }
+        .back-link {
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <div class="post-container">
+        <a class="back-link" href="{% url 'all_posts' %}">Back to Home</a>
         <h1>{{ post.title }}</h1>
         <p><strong>Category:</strong> {{ post.category }}</p>
         <p><strong>Description:</strong> {{ post.description }}</p>

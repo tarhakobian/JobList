@@ -5,10 +5,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: cornsilk;
         }
+
         h1 {
             text-align: center;
         }
+
         .list-container {
             max-width: 800px;
             margin: 0 auto;
@@ -17,15 +20,26 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         li {
             margin-bottom: 20px;
             display: flex;
             align-items: flex-start;
         }
+
+        .post-details::after {
+            content: "";
+            display: block;
+            height: 1px;
+            background-color: #ccc;
+            margin-top: 10px;
+        }
+
         .post-number {
             width: 30px;
             height: 30px;
@@ -36,42 +50,55 @@
             border-radius: 5px;
             margin-right: 10px;
         }
+
         .post-details {
             flex: 1;
         }
+
         .post-title {
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 5px;
         }
+
         .post-description {
             font-size: 14px;
             color: #666;
         }
+
+        .post-created-at {
+            font-size: 12px;
+            color: #999;
+            text-align: right;
+        }
+
         a:hover {
             background-color: #ddd;
         }
+
         .no-posts {
             color: #666;
         }
     </style>
 </head>
 <body>
-    <h1>Job List</h1>
-    <div class="list-container">
-        <ul>
-            {% for post in posts %}
-                <li>
-                    <div class="post-number">{{ forloop.counter }}</div>
-                    <div class="post-details">
-                        <div class="post-title"><a href="{% url 'post_details' post_id=post.id %}">{{ post.title|upper }}</a></div>
-                        <div class="post-description">{{ post.description }}</div>
-                    </div>
-                </li>
-            {% empty %}
-                <li class="no-posts">No posts available.</li>
-            {% endfor %}
-        </ul>
-    </div>
+<h1>Job List</h1>
+<div class="list-container">
+    <ul>
+        {% for post in posts %}
+            <li>
+                <div class="post-number">{{ forloop.counter }}</div>
+                <div class="post-details">
+                    <div class="post-title"><a
+                            href="{% url 'post_details' post_id=post.id %}">{{ post.title|upper }}</a></div>
+                    <div class="post-description">{{ post.description }}</div>
+                    <div class="post-created-at">{{ post.created_at }}</div>
+                </div>
+            </li>
+        {% empty %}
+            <li class="no-posts">No posts available.</li>
+        {% endfor %}
+    </ul>
+</div>
 </body>
 </html>

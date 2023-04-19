@@ -23,3 +23,4 @@ class Post(models.Model):
     contact_name = models.CharField(max_length=255, null=True)
     phone_number = models.CharField(max_length=255, null=True)
     email = models.EmailField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
