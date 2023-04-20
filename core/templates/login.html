@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<style>
+    body {
+        background-color: cornsilk;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login-container {
+        background-color: #ffffff;
+        width: 300px;
+        padding: 40px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .login-header {
+        text-align: center;
+        color: #333333;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .login-form {
+        margin-top: 30px;
+    }
+
+    .login-input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: none;
+        border-bottom: 1px solid #333333;
+        outline: none;
+        font-size: 14px;
+        transition: border-bottom-color 0.3s;
+    }
+
+    .login-input::placeholder {
+        color: #999999;
+    }
+
+    .login-input:focus,
+    .login-input:hover {
+        border-bottom-color: #777777;
+    }
+
+    .login-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #333333;
+        color: #ffffff;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        transition: background-color 0.3s;
+        font-size: 16px;
+    }
+
+    .login-btn:hover {
+        background-color: #222222;
+    }
+
+    .forgot-password-link {
+        display: block;
+        text-align: center;
+        color: #999999;
+        margin-top: 10px;
+        text-decoration: none;
+        font-size: 12px;
+    }
+
+    .forgot-password-link:hover {
+        color: #777777;
+    }
+</style>
+<body>
+<div class="login-container">
+    <h1 class="login-header">Login</h1>
+    <form class="login-form">
+        <label>
+            <input type="text" placeholder="Username" class="login-input"/>
+        </label>
+        <label>
+            <input type="password" placeholder="Password" class="login-input"/>
+        </label>
+        <button type="submit" class="login-btn">Login</button>
+    </form>
+    <a href="#" class="forgot-password-link">Forgot Password?</a>
+</div>
+</body>
+</html>

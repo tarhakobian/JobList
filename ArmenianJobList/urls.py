@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', core.views.get_all_posts, name='all_posts'),
     path('post/<str:post_id>/', core.views.post_details, name='post_details'),
+    path('login/', core.views.get_login_page)
 ]

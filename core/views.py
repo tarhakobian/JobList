@@ -1,7 +1,8 @@
+from django.core.exceptions import ValidationError
 from django.http import Http404
 from django.shortcuts import render
+
 from .models import Post
-from django.core.exceptions import ValidationError
 
 
 def get_all_posts(request):
@@ -17,3 +18,5 @@ def post_details(request, post_id):
     return render(request, 'post.html', {'post': post})
 
 
+def get_login_page(request):
+    return render(request, 'login.html')
