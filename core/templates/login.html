@@ -83,15 +83,17 @@
         color: #777777;
     }
 </style>
+
 <body>
 <div class="login-container">
     <h1 class="login-header">Login</h1>
-    <form class="login-form">
+    <form class="login-form" method="post" action="http://localhost:8000/login/">
+        {% csrf_token %}
         <label>
-            <input type="text" placeholder="Username" class="login-input"/>
+            <input type="text" placeholder="Username" class="login-input" id="usernameInput" name="username"/>
         </label>
         <label>
-            <input type="password" placeholder="Password" class="login-input"/>
+            <input type="password" placeholder="Password" class="login-input" id="passwordInput" name="password"/>
         </label>
         <button type="submit" class="login-btn">Login</button>
     </form>
@@ -99,3 +101,5 @@
 </div>
 </body>
 </html>
+
+

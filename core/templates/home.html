@@ -83,6 +83,7 @@
 </head>
 <body>
 <h1>Job List</h1>
+<a href="http://localhost:8000/profile/">{{ request.session.username }}</a>
 <div class="list-container">
     <ul>
         {% for post in posts %}

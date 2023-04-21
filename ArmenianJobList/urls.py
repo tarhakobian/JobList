@@ -21,7 +21,9 @@ import core.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', core.views.get_all_posts, name='all_posts'),
+    path('home/', core.views.home, name='home'),
+    path('profile/', core.views.profile, name='profile'),
     path('post/<str:post_id>/', core.views.post_details, name='post_details'),
-    path('login/', core.views.get_login_page)
+    path('login/', core.views.login_page, name='login'),
+    path('register/', core.views.register_page, name='register')
 ]
