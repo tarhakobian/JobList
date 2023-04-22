@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Post</title>
+</head>
+<style>
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    textarea,
+    input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    span.required {
+        color: red;
+    }
+
+</style>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <label for="title">Title<span style="color: red;">*</span></label>
+    <input type="text" name="title" id="title" required><br>
+
+    <label for="description">Description<span style="color: red;">*</span></label>
+    <textarea name="description" id="description" required></textarea><br>
+
+    <label for="category">Category<span style="color: red;">*</span></label>
+    <input type="text" name="category" id="category" value="Mixed" required><br>
+
+    <label for="requirements">Requirements<span style="color: red;">*</span></label>
+    <textarea name="requirements" id="requirements" required></textarea><br>
+
+    <label for="salary">Salary</label>
+    <input type="text" name="salary" id="salary"><br>
+
+    <label for="contact_name">Contact Name</label>
+    <input type="text" name="contact_name" id="contact_name"><br>
+
+    <label for="phone_number">Phone Number</label>
+    <input type="text" name="phone_number" id="phone_number"><br>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email"><br>
+
+    <input type="submit" value="Create Post">
+</form>
+
+</body>
+</html>

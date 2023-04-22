@@ -1,11 +1,10 @@
-import uuid
-
 from django.db import models
+from django.db.models import deletion
 
 
 class Post(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4(), editable=False)
-    # publisher = models.ForeignKey(, on_delete=CASCADE, )
+    id = models.AutoField(editable=False, primary_key=True)
+    publisher = models.ForeignKey(on_delete=deletion.CASCADE, to='auth.User', null=True)
     category = models.CharField(max_length=255, default='Mixed', db_index=True)
     title = models.CharField(max_length=255)
     description = models.TextField(null=True)

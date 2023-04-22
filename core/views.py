@@ -1,10 +1,11 @@
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.http import Http404
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_protect
 
-from .classes import RegistrationForm
+from .forms import RegistrationForm
 from .models import Post
 
 
@@ -23,6 +24,28 @@ def post_details(request, post_id):
 
 def profile(request):
     return render(request, 'profile.html')
+
+
+# TODO// add validations
+def create_post(request):
+    if request.method == "POST":
+        post = Post()
+
+        post.publisher_id = User.objects.get(username=request.session['username']).id
+        post.category = request.POST['category']
+        post.title = request.POST['title']
+        post.description = request.POST['description']
+        post.requirements = request.POST['requirements']
+        post.salary = request.POST['salary']
+        post.contact_name = request.POST['contact_name']
+        post.phone_number = request.POST['phone_number']
+        post.email = request.POST['email']
+
+        post.save()
+
+        return redirect("home")
+
+    return render(request, 'create_post.html')
 
 
 @csrf_protect

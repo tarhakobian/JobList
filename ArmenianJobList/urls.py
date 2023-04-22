@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', core.views.home, name='home'),
     path('profile/', core.views.profile, name='profile'),
+    path('create/post', core.views.create_post, name='create_post'),
     path('post/<str:post_id>/', core.views.post_details, name='post_details'),
     path('login/', core.views.login_page, name='login'),
     path('register/', core.views.register_page, name='register')
